@@ -1,9 +1,5 @@
 ## PYTHON
 
-## Python Cheat Sheet
-
-This cheat sheet provides a quick reference for common Python concepts and syntax, ranging from basic to advanced.
-
 **Basic Syntax:**
 
   * **Hello World:**
