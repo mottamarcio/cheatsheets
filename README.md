@@ -14,7 +14,8 @@ This repository provides a collection of concise and practical cheat sheets for 
 * **TypeScript:**  Enhance your JavaScript development with TypeScript, using this guide to type annotations, interfaces, generics, and more.
 * **JavaScript (ES6+):**  Stay up-to-date with modern JavaScript features, including arrow functions, template literals, destructuring, and async/await.
 * **MongoDB:**  Harness the power of NoSQL databases with this MongoDB cheat sheet, covering CRUD operations, query operators, aggregation framework, and more.
-* **NestJS:**  Build scalable and maintainable server-side applications using NestJS, leveraging this guide to modules, controllers, services, and advanced features.
+* **NodeJS:**  Runtime environment that executes JavaScript code outside of a web browser. This allows you to use JavaScript for server-side scripting, command-line tools, and more.
+* **GIT:**  Distributed version control system that tracks changes to your codebase, allowing you to manage different versions, collaborate with others, and revert to previous states if needed.
 
 **How to Use:**
 
