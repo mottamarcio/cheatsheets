@@ -1,6 +1,6 @@
 ## DOCKER
 
-**Basic Commands:**
+**List of Commands:**
 
 |Command|Description|
 |---|---|
@@ -21,11 +21,6 @@
 |`docker rmi -f $(docker images -q)`|Force remove all images|
 |`docker exec -it <container_id> <command>`|Execute a command in a running container|
 |`docker logs <container_id>`|View container logs|
-
-**Intermediate Commands:**
-
-|Command|Description|
-|---|---|
 |`docker build -t <image_name> .`|Build an image from a Dockerfile|
 |`docker images`|List all images|
 |`docker images -q`|List only image IDs|
@@ -39,11 +34,6 @@
 |`docker network create <network_name>`|Create a new network|
 |`docker network ls`|List all networks|
 |`docker network connect <network_name> <container_id>`|Connect a container to a network|
-
-**Advanced Commands:**
-
-|Command|Description|
-|---|---|
 |`docker build --build-arg <key>=<value> .`|Build an image with build arguments|
 |`docker history <image_id>`|Show the history of an image|
 |`docker inspect <container_id>`|Get detailed information about a container|
