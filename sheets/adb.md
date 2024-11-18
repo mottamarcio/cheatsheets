@@ -1,6 +1,6 @@
 ## ADB (Android Debug Bridge)
 
-**Basic commands:**
+**List of commands:**
 
 | Command | Description |
 |---|---|
@@ -14,11 +14,6 @@
 | `adb reboot recovery` | Reboot into recovery mode |
 | `adb reboot bootloader` | Reboot into bootloader mode |
 | `adb logcat` | View device logs |
-
-**Other commands:**
-
-| Command | Description |
-|---|---|
 | `adb shell pm list packages` | List all installed packages |
 | `adb shell pm clear <package_name>` | Clear app data |
 | `adb shell dumpsys activity` | Get information about current activity |
