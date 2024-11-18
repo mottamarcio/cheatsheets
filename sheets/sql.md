@@ -41,6 +41,9 @@
 
 |Command|Description|Example|
 |:---|:---|:---|
+|`BEGIN`|Start a transaction block.|`BEGIN TRANSACTION;`|
+|`COMMIT`|Commit the changes made within a transaction.|`COMMIT;`|
+|`ROLLBACK`|Rollback the changes made within a transaction.|`ROLLBACK;`|
 |`TRANSACTION`|Group multiple statements into a single unit of work|`BEGIN TRANSACTION; UPDATE accounts SET balance = balance - 100 WHERE id = 1; UPDATE accounts SET balance = balance + 100 WHERE id = 2; COMMIT;`|
 
 **Aggregate Functions**
