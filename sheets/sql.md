@@ -72,6 +72,18 @@
 |`CASE`|Perform conditional logic|`SELECT name, CASE WHEN age >= 18 THEN 'Adult' ELSE 'Minor' END AS age_group FROM users;`|
 |---|Cartesian product is a cross-join which returns all the rows in all the tables listed in a query.|`SELECT c.id, c.nome, c.data_nascimento, c.telefone, p.cargo	FROM clientes AS c, profissoes AS p WHERE c.id_profissao = p.id;`|
 
+**Date functions**
+|Command|Description|Example|
+|:---|:---|:---|
+| `GETDATE()` | Returns the current date and time. | `SELECT GETDATE();` |
+| `CURRENT_TIMESTAMP` or `CURTIME` | Returns the current date and time. | `SELECT CURRENT_TIMESTAMP;` |
+| `DATEADD(datepart, number, date)` | Adds a specified number of units to a date. | `SELECT DATEADD(day, 7, '2023-12-25');` |
+| `DATEDIFF(datepart, startdate, enddate)` | Returns the difference between two dates. | `SELECT DATEDIFF(day, '2023-12-25', '2024-01-01');` |
+| `DATEPART(datepart, date)` | Returns a specific part of a date. | `SELECT DATEPART(month, '2023-12-25');` |
+| `DAY(date)` | Returns the day of the month. | `SELECT DAY('2023-12-25');` |
+| `MONTH(date)` | Returns the month of the year. | `SELECT MONTH('2023-12-25');` |
+| `YEAR(date)` | Returns the year. | `SELECT YEAR('2023-12-25');` |
+
 **Tips and Tricks:**
 
   * Use uppercase for SQL keywords and lowercase for table and column names.
