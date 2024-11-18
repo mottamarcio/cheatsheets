@@ -76,13 +76,33 @@
 |Command|Description|Example|
 |:---|:---|:---|
 | `GETDATE()` | Returns the current date and time. | `SELECT GETDATE();` |
-| `CURRENT_TIMESTAMP` or `CURTIME` | Returns the current date and time. | `SELECT CURRENT_TIMESTAMP;` |
+| `CURRENT_TIMESTAMP` or `NOW` | Returns the current date and time. | `SELECT CURRENT_TIMESTAMP;` |
 | `DATEADD(datepart, number, date)` | Adds a specified number of units to a date. | `SELECT DATEADD(day, 7, '2023-12-25');` |
 | `DATEDIFF(datepart, startdate, enddate)` | Returns the difference between two dates. | `SELECT DATEDIFF(day, '2023-12-25', '2024-01-01');` |
 | `DATEPART(datepart, date)` | Returns a specific part of a date. | `SELECT DATEPART(month, '2023-12-25');` |
+| `HOUR(time)` | Returns the hour from a time/datetime. | `SELECT HOUR('10:30:00');` |
+| `MINUTE(time)` | Returns the minute from a time/datetime. | `SELECT MINUTE('10:30:00');` |
+| `SECOND(time)` | Returns the second from a time/datetime. | `SELECT SECOND('10:30:00');` |
 | `DAY(date)` | Returns the day of the month. | `SELECT DAY('2023-12-25');` |
+| `WEEK(date)` | Returns the week number of the year. | `SELECT WEEK('2023-12-25');` |
 | `MONTH(date)` | Returns the month of the year. | `SELECT MONTH('2023-12-25');` |
+| `QUARTER(date)` | Returns the quarter of the year (1-4). | `SELECT QUARTER('2023-12-25');` |
 | `YEAR(date)` | Returns the year. | `SELECT YEAR('2023-12-25');` |
+| `WEEKDAY(date)` | Returns the weekday index (0-6, Monday=0). | `SELECT WEEKDAY('2023-12-25');` |
+| `CURDATE()` | Returns the current date. | `SELECT CURDATE();` |
+| `CURTIME()` | Returns the current time. | `SELECT CURTIME();` |
+| `DATE_ADD(date, INTERVAL expr unit)` | Adds a time/date interval to a date. | `SELECT DATE_ADD('2023-12-25', INTERVAL 7 DAY);` |
+| `DATE_SUB(date, INTERVAL expr unit)` | Subtracts a time/date interval from a date. | `SELECT DATE_SUB('2023-12-25', INTERVAL 1 MONTH);` |
+| `DATE_FORMAT(date, format)` | Formats a date value according to a format string. | `SELECT DATE_FORMAT('2023-12-25', '%Y-%m-%d');` |
+| `DAYNAME(date)` | Returns the name of the weekday for a given date. | `SELECT DAYNAME('2023-12-25');` | 
+| `DAYOFMONTH(date)` | Returns the day of the month (1-31). | `SELECT DAYOFMONTH('2023-12-25');` |
+| `DAYOFWEEK(date)` | Returns the weekday index (1-7, Sunday=1). | `SELECT DAYOFWEEK('2023-12-25');` |
+| `DAYOFYEAR(date)` | Returns the day of the year (1-366). | `SELECT DAYOFYEAR('2023-12-25');` |
+| `TIME(datetime)` | Extracts the time part of a datetime expression. | `SELECT TIME('2023-12-25 10:30:00');` |
+| `SEC_TO_TIME(seconds)` | Converts seconds to a time value. | `SELECT SEC_TO_TIME(3600);` |
+| `PERIOD_DIFF(period1, period2)` | Returns the number of months between periods. | `SELECT PERIOD_DIFF(202401, 202312);` |
+| `TIME_DIFF(time1, time2)` | Returns the difference between two time values. | `SELECT TIME_DIFF('10:30:00', '09:00:00');` |
+
 
 **Tips and Tricks:**
 
