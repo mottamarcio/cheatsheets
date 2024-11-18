@@ -1,6 +1,6 @@
 ## ADB (Android Debug Bridge)
 
-**Basic Commands:**
+**Basic commands:**
 
 | Command | Description |
 |---|---|
@@ -15,7 +15,7 @@
 | `adb reboot bootloader` | Reboot into bootloader mode |
 | `adb logcat` | View device logs |
 
-**Intermediate Commands:**
+**Other commands:**
 
 | Command | Description |
 |---|---|
@@ -27,11 +27,6 @@
 | `adb forward tcp:<local_port> tcp:<remote_port>` | Forward a port |
 | `adb shell settings get global <setting_name>` | Get a global setting value |
 | `adb shell settings put global <setting_name> <value>` | Set a global setting value |
-
-**Advanced Commands:**
-
-| Command | Description |
-|---|---|
 | `adb shell am start -n <package_name>/<activity_name>` | Start an activity |
 | `adb shell am broadcast -a <action_name>` | Send a broadcast intent |
 | `adb shell input text "Hello World"` | Simulate text input |
