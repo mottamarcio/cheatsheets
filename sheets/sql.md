@@ -70,6 +70,7 @@
 |`EXCEPT`|Return the rows from the first `SELECT` statement that are not present in the second `SELECT` statement|`SELECT name FROM customers EXCEPT SELECT name FROM employees;`|
 |`SUBQUERY`|A query nested inside another query|`SELECT * FROM products WHERE price > (SELECT AVG(price) FROM products);`|
 |`CASE`|Perform conditional logic|`SELECT name, CASE WHEN age >= 18 THEN 'Adult' ELSE 'Minor' END AS age_group FROM users;`|
+|---|Cartesian product is a cross-join which returns all the rows in all the tables listed in a query.|`SELECT c.id, c.nome, c.data_nascimento, c.telefone, p.cargo	FROM clientes AS c, profissoes AS p WHERE c.id_profissao = p.id;`|
 
 **Tips and Tricks:**
 
