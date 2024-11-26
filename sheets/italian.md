@@ -1,17 +1,17 @@
 ## Coniugazione dei verbi in italiano
 
-| Pessoa | Essere | Avere | Parlare | Abitare | Leggere | Scrivere | Mangiare | 
+| Pessoa | Abitare | Andare | Avere | Bere | Capire | Dormire | Essere |
 |---|---|---|---|---|---|---|---|
-| io | sono | ho | parlo | abito | leggo | scrivo | mangio |
-| tu | sei | hai | parli | abiti | leggi | scrivi | mangi |
-| lui/lei/Lei | è | ha | parla | abita | legge | scrive | mangia |
-| noi | siamo | abbiamo | parliamo | abitiamo | leggiamo | scriviamo | mangiamo |
-| voi | siete | avete | parlate | abitate | leggete | scrivete | mangiate |
-| loro | sono | hanno | parlano | abitano | leggono | scrivono | mangiano |
-| **Pessoa** | **Bere** | **Dormire** | **Partire** | **Preferire** | **Capire** | **Andare** | **Venire** |
-| io | bevo | dormo | parto | preferisco | capisco | vado | vengo |
-| tu | bevi | dormi | parti | preferisci | capisci | vai | vieni |
-| lui/lei/Lei | beve | dorme | parte | preferisce | capisce | va | viene |
-| noi | beviamo | dormiamo | partiamo | preferiamo | capiamo | andiamo | veniamo |
-| voi | bevete | dormite | partite | preferite | capite | andate | venite |
-| loro | bevono | dormono | partono | preferiscono | capiscono | vanno | vengono |
+| io | abito | vado | ho | bevo | capisco | dormo | sono |
+| tu | abiti | vai | hai | bevi | capisci | dormi | sei |
+| lui/lei/Lei | abita | va | ha | beve | capisce | dorme | è |
+| noi | abitiamo | andiamo | abbiamo | beviamo | capiamo | dormiamo | siamo |
+| voi | abitate | andate | avete | bevete | capite | dormite | siete |
+| loro | abitano | vanno | hanno | bevono | capiscono | dormono | sono |
+| **Pessoa** | **Leggere** | **Mangiare** | **Parlare** | **Partire** | **Preferire** | **Scrivere** | **Venire** |
+| io | leggo | mangio | parlo | parto | preferisco | scrivo | vengo |
+| tu | leggi | mangi | parli | parti | preferisci | scrivi | vieni |
+| lui/lei/Lei | legge | mangia | parla | parte | preferisce | scrive | viene |
+| noi | leggiamo | mangiamo | parliamo | partiamo | preferiamo | scriviamo | veniamo |
+| voi | leggete | mangiate | parlate | partite | preferite | scrivete | venite |
+| loro | leggono | mangiano | parlano | partono | preferiscono | scrivono | vengono |
