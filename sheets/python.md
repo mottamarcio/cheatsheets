@@ -11,8 +11,8 @@ print("Hello, world!")
   * **Variables:**
 
 ```python
-age = 30
-name = "John Doe"
+age: int = 30
+name: str = "John Doe"
 ```
 
   * **Data Types:**
@@ -32,113 +32,209 @@ name = "John Doe"
       * Comparison: `==`, `!=`, `>`, `<`, `>=`, `<=`
       * Logical: `and`, `or`, `not`
       * Assignment: `=`, `+=`, `-=`, `*=`, `/=`, etc.
+      * Membership: `in`, `not in` (check if an element exists in a sequence)
+      * Identity: `is`, `is not` (check if two variables refer to the same object)
 
   * **Control Flow:**
 
       * `if-elif-else` statement
+
+      ```python
+      if age >= 18:
+          print("You are an adult")
+      elif age >= 13:
+          print("You are a teenager")
+      else:
+          print("You are a child")
+      ```
+
       * `for` loop
+
+      ```python
+      for i in range(5):  # iterates 5 times, i = 0, 1, 2, 3, 4
+          print(i)
+
+      fruits = ["apple", "banana", "cherry"]
+      for fruit in fruits:
+          print(fruit)
+      ```
+
       * `while` loop
+
+      ```python
+      count = 0
+      while count < 5:
+          print(count)
+          count += 1
+      ```
+
       * `break` and `continue` statements
+
+      ```python
+      for i in range(10):
+          if i == 5:
+              break  # exit the loop when i is 5
+          if i % 2 == 0:
+              continue  # skip even numbers
+          print(i) 
+      ```
+
+**Collections:**
+
+  * **Lists:**
+
+    ```python
+    my_list: list[int] = [1, 2, 3, 4, 5]
+    my_list.append(6)  # Add an element
+    my_list.remove(3)  # Remove an element
+    print(my_list[0])  # Access an element by index
+    ```
+
+  * **Tuples:** (immutable - cannot be changed after creation)
+
+    ```python
+    my_tuple: tuple[str, int, float] = ("apple", 1, 3.14)
+    print(my_tuple[0])  # Access an element by index
+    ```
+
+  * **Sets:** (unordered, unique elements)
+
+    ```python
+    my_set: set[int] = {1, 2, 3}
+    my_set.add(4)  # Add an element
+    my_set.remove(2)  # Remove an element
+    ```
+
+  * **Dictionaries:** (key-value pairs)
+
+    ```python
+    my_dict: dict[str, int] = {"apple": 1, "banana": 2, "cherry": 3}
+    my_dict["apple"] = 5  # Modify a value
+    my_dict["orange"] = 4  # Add a new key-value pair
+    print(my_dict["banana"])  # Access a value by key
+    ```
 
 **Intermediate Concepts:**
 
   * **Functions:**
 
-```python
-def add(x, y):
-  return x + y
-```
+    ```python
+    def add(x: int, y: int) -> int:
+        """This function adds two numbers and returns the sum."""
+        return x + y
+
+    result: int = add(5, 3)
+    print(result)  # Output: 8
+    ```
 
   * **List Comprehensions:**
 
-```python
-squares = [x**2 for x in range(10)]
-```
+    ```python
+    squares: list[int] = [x**2 for x in range(10)]
+    ```
 
   * **String Formatting:**
 
-```python
-name = "John"
-age = 30
-print(f"My name is {name} and I am {age} years old.")
-```
+    ```python
+    name: str = "John"
+    age: int = 30
+    print(f"My name is {name} and I am {age} years old.")
+    ```
 
   * **File Handling:**
 
-```python
-with open("myfile.txt", "r") as f:
-  content = f.read()
-```
+    ```python
+    with open("myfile.txt", "r") as f:
+        content: str = f.read()
+    ```
 
   * **Modules and Packages:**
 
-```python
-import math
-from datetime import datetime
-```
+    ```python
+    import math
+    from datetime import datetime
+    ```
 
 **Advanced Concepts:**
 
   * **Classes and Objects:**
 
-```python
-class Dog:
-  def __init__(self, name):
-    self.name = name
+    ```python
+    class Dog:
+      def __init__(self, name: str):
+          self.name: str = name
 
-  def bark(self):
-    print("Woof!")
-```
+      def bark(self) -> None:
+          print("Woof!")
+
+    my_dog: Dog = Dog("Buddy")
+    my_dog.bark()  # Output: Woof!
+    ```
 
   * **Decorators:**
 
-```python
-def my_decorator(func):
-  def wrapper():
-    print("Something is happening before the function is called.")
-    func()
-    print("Something is happening after the function is called.")
-  return wrapper
+    ```python
+    def my_decorator(func):
+      def wrapper():
+          print("Something is happening before the function is called.")
+          func()
+          print("Something is happening after the function is called.")
+      return wrapper
 
-@my_decorator
-def say_hello():
-  print("Hello!")
-```
+    @my_decorator
+    def say_hello():
+      print("Hello!")
+
+    say_hello()
+    ```
 
   * **Generators:**
 
-```python
-def my_generator(n):
-  for i in range(n):
-    yield i**2
-```
+    ```python
+    def my_generator(n: int) -> int:
+      for i in range(n):
+          yield i**2
+
+    for i in my_generator(5):
+        print(i)
+    ```
 
   * **Exceptions:**
 
-```python
-try:
-  # Code that might raise an exception
-except ValueError:
-  # Handle ValueError
-except Exception as e:
-  # Handle other exceptions
-finally:
-  # Code that always executes
-```
+    ```python
+    try:
+      # Code that might raise an exception
+      result: int = 10 / 0  # This will raise a ZeroDivisionError
+    except ValueError:
+      # Handle ValueError
+      print("ValueError occurred")
+    except ZeroDivisionError:
+      # Handle ZeroDivisionError
+      print("Cannot divide by zero")
+    except Exception as e:
+      # Handle other exceptions
+      print(f"An error occurred: {e}")
+    finally:
+      # Code that always executes
+      print("This will always execute")
+    ```
 
   * **Lambda Functions:**
 
-```python
-add = lambda x, y: x + y
-```
+    ```python
+    add = lambda x: int, y: int: x + y  # type hint for lambda functions
+    print(add(5, 3))  # Output: 8
+    ```
 
 **Tips and Tricks:**
 
+  * Use name convention: **snake_case** for variables, functions and methods; **SCREAMING_SNAKE_CASE** for constants ; **PascalCase** for classes.
   * Use meaningful variable names.
   * Write comments to explain your code.
   * Use a code editor with syntax highlighting and autocompletion.
   * Use the `help()` function to get information about a function or module.
   * Read the official Python documentation.
+  * Use type hints to improve code readability and maintainability.
 
 **Resources:**
 
