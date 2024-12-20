@@ -105,14 +105,89 @@ name: str = "John Doe"
     my_set.remove(2)  # Remove an element
     ```
 
-  * **Dictionaries:** (key-value pairs)
+**Dictionaries**
+
+Dictionaries store data in key-value pairs. Keys must be unique and immutable (like strings or numbers), while values can be of any data type.
+
+```python
+my_dict: dict[str, int] = {"apple": 1, "banana": 2, "cherry": 3} 
+```
+
+*   **Accessing Values:**
+    ```python
+    print(my_dict["banana"])  # Output: 2
+    ```
+
+*   **Modifying Values:**
+    ```python
+    my_dict["apple"] = 5 
+    ```
+
+*   **Adding New Key-Value Pairs:**
+    ```python
+    my_dict["orange"] = 4
+    ```
+
+*   **`del` keyword:** Removes a key-value pair
+    ```python
+    del my_dict["banana"]  
+    ```
+
+*   **`pop()` method:** Removes a key-value pair and returns the value.
+    ```python
+    removed_value = my_dict.pop("cherry") 
+    print(removed_value)  # Output: 3
+    ```
+
+*   **`copy()` method:** Creates a shallow copy of the dictionary.
+    ```python
+    new_dict = my_dict.copy()
+    ```
+
+*   **`clear()` method:** Removes all items from the dictionary.
+    ```python
+    my_dict.clear()
+    ```
+
+*   **`keys()` method:** Returns a view object of all keys.
+    ```python
+    print(my_dict.keys()) 
+    ```
+
+*   **`values()` method:** Returns a view object of all values.
+    ```python
+    print(my_dict.values()) 
+    ```
+
+*   **`items()` method:** Returns a view object of all key-value pairs (as tuples).
+    ```python
+    print(my_dict.items())
+    ```
+
+*   **Checking for Key Existence:**
+    ```python
+    if "apple" in my_dict:
+        print("Apple is in the dictionary")
+    ```
+
+*   **Iterating through a Dictionary:**
+    ```python
+    for key in my_dict:
+        print(key, my_dict[key]) 
+    ```
 
     ```python
-    my_dict: dict[str, int] = {"apple": 1, "banana": 2, "cherry": 3}
-    my_dict["apple"] = 5  # Modify a value
-    my_dict["orange"] = 4  # Add a new key-value pair
-    print(my_dict["banana"])  # Access a value by key
+    for key, value in my_dict.items():
+        print(key, value)
     ```
+
+**Important Notes:**
+
+*   Trying to access a key that doesn't exist will raise a `KeyError`.
+*   Dictionaries are unordered, meaning the items don't have a specific order.
+
+I hope this helps make your cheat sheet even more comprehensive! Let me know if you have any other questions or want to add more to it.
+
 
 **Intermediate Concepts:**
 
