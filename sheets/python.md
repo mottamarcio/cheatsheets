@@ -181,14 +181,6 @@ my_dict: dict[str, int] = {"apple": 1, "banana": 2, "cherry": 3}
         print(key, value)
     ```
 
-**Important Notes:**
-
-*   Trying to access a key that doesn't exist will raise a `KeyError`.
-*   Dictionaries are unordered, meaning the items don't have a specific order.
-
-I hope this helps make your cheat sheet even more comprehensive! Let me know if you have any other questions or want to add more to it.
-
-
 **Intermediate Concepts:**
 
   * **Functions:**
@@ -300,6 +292,129 @@ I hope this helps make your cheat sheet even more comprehensive! Let me know if 
     add = lambda x: int, y: int: x + y  # type hint for lambda functions
     print(add(5, 3))  # Output: 8
     ```
+
+**Virtual Environment (`venv`)**
+
+* **Create a virtual environment:**
+```bash
+python -m venv env_name
+```
+
+* **Activate the virtual environment:**
+* Windows:
+  ```bash
+  .\env_name\Scripts\activate
+  ```
+* MacOS/Linux:
+  ```bash
+  source env_name/bin/activate
+  ```
+
+* **Deactivate the virtual environment:**
+```bash
+deactivate
+```
+
+**Package Management with `pip freeze`**
+
+* **List installed packages and versions:**
+```bash
+pip freeze
+```
+
+* **Export installed packages to a requirements file:**
+```bash
+pip freeze > requirements.txt
+```
+
+* **Install packages from a requirements file:**
+```bash
+pip install -r requirements.txt
+```
+
+**Testing with `pytest`**
+
+* **Run all tests in a directory or file:**
+```bash
+pytest
+```
+
+* **Run a specific test function:**
+```bash
+pytest path/to/test_file.py::test_function_name
+```
+
+* **View detailed output (verbose mode):**
+```bash
+pytest -v
+```
+
+* **Generate a code coverage report:**
+```bash
+pytest --cov=your_module
+```
+
+* **Run tests and stop after the first failure:**
+```bash
+pytest -x
+```
+
+**Writing Tests with `pytest`**
+
+* **Basic Test Function:**
+```python
+def test_addition():
+    assert 1 + 1 == 2
+```
+
+* **Using `assert` Statements:**
+
+- **Equality Check:**
+    ```python
+    assert actual == expected
+    ```
+
+- **Inequality Check:**
+    ```python
+    assert actual != unexpected
+    ```
+
+- **Membership:**
+    ```python
+    assert element in collection
+    ```
+
+- **Exception Handling:**
+    ```python
+    import pytest
+
+    def test_raises_exception():
+        with pytest.raises(ValueError):
+            int("invalid")
+    ```
+
+- **Approximation for Floating-Point Comparisons:**
+    ```python
+    assert abs(actual - expected) < 0.001
+    # OR using pytest's `approx`:
+    from pytest import approx
+    assert actual == approx(expected, rel=1e-3)
+    ```
+
+**Fixtures in `pytest`**
+
+* **Example:**
+```python
+import pytest
+
+@pytest.fixture
+def sample_data():
+    return {"name": "John", "age": 30}
+
+def test_sample_data(sample_data):
+    assert sample_data["name"] == "John"
+    assert sample_data["age"] == 30
+```
 
 **Tips and Tricks:**
 
