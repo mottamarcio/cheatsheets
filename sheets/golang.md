@@ -1,6 +1,6 @@
 ## **Golang Cheat Sheet**
 
-### **1. Basics**
+### **1. Básico**
 
 #### Hello World
 ```go
@@ -13,14 +13,14 @@ func main() {
 }
 ```
 
-#### Variables and Constants
+#### Variáveis e Constantes
 ```go
 var name string = "Go"
 var age int = 10
-version := 1.18       // Short declaration
-const Pi = 3.14       // Constant
+version := 1.18       // Declaração curta
+const Pi = 3.14       // Constante
 
-// Multiple variables
+// Múltiplas variáveis
 var (
     a = 1
     b = 2
@@ -28,17 +28,17 @@ var (
 )
 ```
 
-#### Basic Types
+#### Tipos básicos
 - **int**, **float64**, **string**, **bool**
-- Zero values: `0`, `0.0`, `""`, `false`
+- Valores zero: `0`, `0.0`, `""`, `false`
 
-#### Functions
+#### Funções
 ```go
 func add(a int, b int) int {
     return a + b
 }
 
-// Multiple returns
+// Retornos múltiplos
 func divide(a, b int) (int, error) {
     if b == 0 {
         return 0, fmt.Errorf("cannot divide by zero")
@@ -47,7 +47,7 @@ func divide(a, b int) (int, error) {
 }
 ```
 
-#### Control Structures
+#### Estruturas de Controle
 ```go
 // If-else
 if x > 10 {
@@ -56,9 +56,22 @@ if x > 10 {
     fmt.Println("Small number")
 }
 
+// If com inicialização
+if num := 10; num%2 == 0 {
+    fmt.Println("Número par:", num)
+} else {
+    fmt.Println("Número ímpar:", num)
+}
+
 // For loop
 for i := 0; i < 5; i++ {
     fmt.Println(i)
+}
+
+// For com range
+numbers := []int{10, 20, 30}
+for index, value := range numbers {
+    fmt.Printf("Index: %d, Value: %d\n", index, value)
 }
 
 // Switch
@@ -72,26 +85,26 @@ default:
 
 ---
 
-### **2. Data Structures**
+### **2. Estruturas de Dados**
 
 #### Arrays
 ```go
-var arr [5]int          // Array of size 5
-arr[0] = 10             // Assign value
-fmt.Println(arr[0])     // Access value
+var arr [5]int          // Array de tamanho 5
+arr[0] = 10             // Atribuir valor
+fmt.Println(arr[0])     // Acessar valor
 ```
 
 #### Slices
 ```go
 numbers := []int{1, 2, 3}
-numbers = append(numbers, 4)          // Add element
+numbers = append(numbers, 4)          // Adicionar elemento
 sub := numbers[1:3]                   // Slice [start:end]
 ```
 
-#### Using `make`
+#### Uso de `make`
 ```go
-s := make([]int, 5)      // Create slice of length 5
-m := make(map[string]int) // Create map
+s := make([]int, 5)      // Criar slice com tamanho 5
+m := make(map[string]int) // Criar mapa
 ```
 
 #### Maps
@@ -100,14 +113,14 @@ m := map[string]int{
     "one": 1,
     "two": 2,
 }
-m["three"] = 3                     // Add key-value
-delete(m, "two")                   // Delete key
-value, exists := m["one"]          // Check existence
+m["three"] = 3                     // Adicionar chave-valor
+delete(m, "two")                   // Deletar chave
+value, exists := m["one"]          // Verificar existência
 ```
 
 ---
 
-### **3. Structs and Methods**
+### **3. Structs e Métodos**
 
 #### Struct
 ```go
@@ -119,22 +132,22 @@ type Person struct {
 p := Person{Name: "Alice", Age: 25}
 ```
 
-#### Methods
+#### Métodos
 ```go
 func (p Person) Greet() string {
     return "Hello, " + p.Name
 }
 ```
 
-#### Pointers
+#### Ponteiros
 ```go
 p := &Person{Name: "Alice"}
-p.Age = 26                  // Dereference automatically
+p.Age = 26                  // Dereferência automática
 ```
 
 ---
 
-### **4. Concurrency**
+### **4. Concorrência**
 
 #### Goroutines
 ```go
@@ -143,19 +156,19 @@ go func() {
 }()
 ```
 
-#### Channels
+#### Canais
 ```go
 ch := make(chan int)
 
-// Send
+// Enviar
 go func() { ch <- 42 }()
 
-// Receive
+// Receber
 value := <-ch
 fmt.Println(value)
 ```
 
-#### Buffered Channels
+#### Canais bufferizados
 ```go
 ch := make(chan int, 2)
 ch <- 1
@@ -175,14 +188,14 @@ case <-time.After(time.Second):
 
 ---
 
-### **5. Error Handling**
+### **5. Tratamento de Erros**
 
-#### Error Type
+#### Tipo de Erro
 ```go
 err := errors.New("something went wrong")
 ```
 
-#### Custom Errors
+#### Erros personalizados
 ```go
 type MyError struct {
     Msg string
@@ -193,7 +206,7 @@ func (e MyError) Error() string {
 }
 ```
 
-#### Panic and Recover
+#### Panic e Recover
 ```go
 defer func() {
     if r := recover(); r != nil {
@@ -205,9 +218,9 @@ panic("Something went wrong")
 
 ---
 
-### **6. Testing**
+### **6. Testes**
 
-#### Simple Test
+#### Teste simples
 ```go
 package main
 
@@ -220,7 +233,7 @@ func TestAdd(t *testing.T) {
 }
 ```
 
-#### Table-Driven Tests
+#### Testes baseados em tabela
 ```go
 func TestAdd(t *testing.T) {
     tests := []struct {
@@ -241,7 +254,7 @@ func TestAdd(t *testing.T) {
 
 ---
 
-### **7. Standard Libraries**
+### **7. Bibliotecas Padrão**
 
 #### File I/O
 ```go
@@ -257,7 +270,7 @@ if err != nil {
 }
 ```
 
-#### HTTP Server
+#### Servidor HTTP
 ```go
 package main
 
@@ -278,12 +291,12 @@ func main() {
 
 ---
 
-### **8. Tips and Tricks**
+### **8. Dicas e Truques**
 
 #### Defer
 ```go
-defer fmt.Println("Executed last")
-fmt.Println("Executed first")
+defer fmt.Println("Executado por último")
+fmt.Println("Executado primeiro")
 ```
 
 #### Interfaces
@@ -301,7 +314,7 @@ func (c Circle) Area() float64 {
 }
 ```
 
-#### Generics
+#### Genéricos
 ```go
 func Sum[T int | float64](a, b T) T {
     return a + b
@@ -310,11 +323,11 @@ func Sum[T int | float64](a, b T) T {
 
 ---
 
-### **9. Tools**
+### **9. Ferramentas**
 
-- **`go fmt`**: Format code
-- **`go run`**: Run the application
-- **`go build`**: Build the binary
-- **`go test`**: Run tests
-- **`go mod init`**: Initialize a module
-- **`go get`**: Fetch dependencies
+- **`go fmt`**: Formatar código
+- **`go run`**: Executar a aplicação
+- **`go build`**: Compilar o binário
+- **`go test`**: Executar testes
+- **`go mod init`**: Inicializar um módulo
+- **`go get`**: Baixar dependências
