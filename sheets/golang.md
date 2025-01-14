@@ -254,39 +254,76 @@ func TestAdd(t *testing.T) {
 
 ---
 
-### **7. Bibliotecas Padrão**
+### **7. File I/O**
 
-#### File I/O
+#### Ler Arquivo com `os.Open` e `bufio.NewReader`
 ```go
-content, err := os.ReadFile("file.txt")
-if err != nil {
-    log.Fatal(err)
-}
-fmt.Println(string(content))
+package main
 
-err = os.WriteFile("file.txt", []byte("Hello"), 0644)
-if err != nil {
-    log.Fatal(err)
+import (
+    "bufio"
+    "fmt"
+    "os"
+    "strings"
+)
+
+func main() {
+    file, err := os.Open("file.txt")
+    if err != nil {
+        fmt.Println("Erro ao abrir o arquivo:", err)
+        return
+    }
+    defer file.Close()
+
+    reader := bufio.NewReader(file)
+
+    for {
+        line, err := reader.ReadString('\n')
+        if err != nil {
+            if err.Error() != "EOF" {
+                fmt.Println("Erro ao ler o arquivo:", err)
+            }
+            break
+        }
+
+        line = strings.TrimSpace(line)
+        fmt.Println(line)
+    }
 }
 ```
 
-#### Servidor HTTP
+#### Escrever em Arquivo
 ```go
 package main
 
 import (
     "fmt"
-    "net/http"
+    "os"
 )
 
-func handler(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintln(w, "Hello, World!")
-}
-
 func main() {
-    http.HandleFunc("/", handler)
-    http.ListenAndServe(":8080", nil)
+    file, err := os.Create("file.txt")
+    if err != nil {
+        fmt.Println("Erro ao criar o arquivo:", err)
+        return
+    }
+    defer file.Close()
+
+    _, err = file.WriteString("Hello, World!\n")
+    if err != nil {
+        fmt.Println("Erro ao escrever no arquivo:", err)
+    }
 }
+```
+
+#### Ler Arquivo Inteiro
+```go
+content, err := os.ReadFile("file.txt")
+if err != nil {
+    fmt.Println("Erro ao ler o arquivo:", err)
+    return
+}
+fmt.Println(string(content))
 ```
 
 ---
