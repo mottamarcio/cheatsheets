@@ -59,6 +59,7 @@
   * `git log`: View commit history.
   * `git log --oneline`: View a concise history.
   * `git log --graph`: View history with a graphical representation of branches.
+  * `git log --format=%s <last_tag_version>..<branch_name>`: View history from a branch and related to a specific tag version.
 
 **VII. Remotes**
 
