@@ -26,7 +26,7 @@ db.users.insertMany([{ name: "Jane Doe", age: 25 }, { name: "Peter Pan", age: 18
 
 ```javascript
 db.users.find(); // Find all documents in the collection
-db.limiters.find().pretty(); // Find all documents in the collection and format the output
+db.users.find().pretty(); // Find all documents in the collection and format the output
 db.users.findOne({ name: "John Doe" }); // Find a single document
 db.users.find({ age: { $gt: 20 } }); // Find documents where age is greater than 20
 db.users.find({ name: { $regex: /Doe$/ } }); // Find documents where name ends with "Doe"
