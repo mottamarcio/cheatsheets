@@ -2,14 +2,15 @@
 
 ### **Basic Commands:**
 
-| Command             | Description                              | Example             |
-| ------------------- | ---------------------------------------- | ------------------- |
-| `mongo`             | Start the MongoDB shell                  | `mongo`             |
-| `show dbs`          | List available databases                 | `show dbs`          |
-| `use <database>`    | Switch to a database                     | `use mydb`          |
-| `db`                | Show the current database                | `db`                |
-| `show collections`  | List collections in the current database | `show collections`  |
-| `db.dropDatabase()` | Drop the current database                | `db.dropDatabase()` |
+| Command                       | Description                              | Example             |
+| ----------------------------- | ---------------------------------------- | ------------------- |
+| `mongo`                       | Start the MongoDB shell                  | `mongo`             |
+| `show dbs`                    | List available databases                 | `show dbs`          |
+| `use <database>`              | Switch to a database                     | `use mydb`          |
+| `db`                          | Show the current database                | `db`                |
+| `show collections`            | List collections in the current database | `show collections`  |
+| `db.<collection-name>.drop()` | Drop the current database                | `db.users.drop()`   |
+| `db.dropDatabase()`           | Drop the current database                | `db.dropDatabase()` |
 
 ---
 
