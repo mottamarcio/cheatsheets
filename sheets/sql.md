@@ -8,8 +8,11 @@
 |`FROM`|Specify the table to retrieve data from|`SELECT name, age FROM employees;`|
 |`WHERE`|Filter data based on a condition|`SELECT * FROM products WHERE price > 100;`|
 |`ORDER BY`|Sort data by one or more columns|`SELECT * FROM orders ORDER BY order_date DESC;`|
-|`LIMIT`|Limit the number of rows returned|`SELECT * FROM users LIMIT 10;`|
+|`LIMIT`|Limit the number of rows returned (MySQL, PostgreSQL, SQLite)|`SELECT * FROM users LIMIT 10;`|
+|`TOP`|Limit the number of rows returned (SQL Server)|`SELECT TOP 10 * FROM users;`|
 |`DISTINCT`|Retrieve unique values|`SELECT DISTINCT city FROM customers;`|
+|`GROUP BY`|Group rows based on a column|`SELECT city, COUNT(*) FROM customers GROUP BY city;`|
+|`HAVING`|Filter grouped data|`SELECT city, COUNT(*) FROM customers GROUP BY city HAVING COUNT(*) > 10;`|
 
 **DML (Data Manipulation Language)**
 
@@ -79,8 +82,6 @@
 
 |Command|Description|Example|
 |:---|:---|:---|
-|`GROUP BY`|Group rows based on a column|`SELECT city, COUNT(*) FROM customers GROUP BY city;`|
-|`HAVING`|Filter grouped data|`SELECT city, COUNT(*) FROM customers GROUP BY city HAVING COUNT(*) > 10;`|
 |`JOIN`|Combine data from multiple tables|`SELECT o.order_id, c.name FROM orders o JOIN customers c ON o.customer_id = c.customer_id;`|
 |`LEFT JOIN`|Return all rows from the left table, even if there is no match in the right table|`SELECT c.name, o.order_id FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id;`|
 |`RIGHT JOIN`|Return all rows from the right table, even if there is no match in the left table|`SELECT c.name, o.order_id FROM customers c RIGHT JOIN orders o ON c.customer_id = o.customer_id;`|
