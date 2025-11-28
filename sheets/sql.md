@@ -18,6 +18,7 @@
 |`INSERT INTO`|Insert data into a table|`INSERT INTO customers (name, email) VALUES ('John Doe', 'john.doe@example.com');`|
 |`UPDATE`|Update data in a table|`UPDATE products SET price = 120 WHERE id = 1;`|
 |`DELETE`|Delete data from a table|`DELETE FROM orders WHERE order_date < '2023-01-01';`|
+|`TRUNCATE`|Quickly remove all records from a table.| `TRUNCATE TABLE customers;` |
 
 **DDL (Data Definition Language)**
 
