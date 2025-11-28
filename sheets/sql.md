@@ -31,6 +31,24 @@
 |`CREATE DATABASE`|Create a new database|`CREATE DATABASE my_database;`|
 |`DROP DATABASE`|Delete a database|`DROP DATABASE my_database;`|
 
+**SQL Operators**
+| Operator       | Description                                   | Example                               |
+|----------------|-----------------------------------------------|----------------------------------------|
+| `=`            | Equal to                                      | `SELECT * FROM users WHERE age = 30;` |
+| `<>` or `!=`   | Not equal to                                  | `SELECT * FROM users WHERE age <> 30;` |
+| `>`            | Greater than                                  | `SELECT * FROM products WHERE price > 100;` |
+| `<`            | Less than                                     | `SELECT * FROM products WHERE price < 50;` |
+| `>=`           | Greater than or equal to                      | `SELECT * FROM users WHERE age >= 18;` |
+| `<=`           | Less than or equal to                         | `SELECT * FROM users WHERE age <= 65;` |
+| `BETWEEN`      | Value within a range                          | `SELECT * FROM orders WHERE total BETWEEN 100 AND 500;` |
+| `LIKE`         | Pattern matching using wildcards              | `SELECT * FROM customers WHERE name LIKE 'J%';` |
+| `IN`           | Match any value in a list                     | `SELECT * FROM users WHERE country IN ('US', 'CA');` |
+| `AND`          | Combine conditions (both must be true)        | `SELECT * FROM users WHERE age > 18 AND active = 1;` |
+| `OR`           | Combine conditions (at least one true)        | `SELECT * FROM users WHERE age < 18 OR active = 0;` |
+| `NOT`          | Negates a condition                           | `SELECT * FROM users WHERE NOT active = 1;` |
+| `IS NULL`      | Check for NULL                                | `SELECT * FROM logs WHERE deleted_at IS NULL;` |
+| `IS NOT NULL`  | Check for NOT NULL                            | `SELECT * FROM logs WHERE deleted_at IS NOT NULL;` |
+
 **DCL (Data Control Language)**
 
 |Command|Description|Example|
