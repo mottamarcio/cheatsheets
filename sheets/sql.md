@@ -78,13 +78,23 @@
 |`MAX`|Find the maximum value in a column|`SELECT MAX(salary) FROM employees;`|
 |`MIN`|Find the minimum value in a column|`SELECT MIN(price) FROM products;`|
 
+**SQL Joins**
+
+|Command|Description|Example|
+|:---|:---|:---|
+|`INNER JOIN`|Combine data from multiple tables|`SELECT o.order_id, c.name FROM orders o INNER JOIN customers c ON o.customer_id = c.customer_id;`|
+|`LEFT JOIN`| Return all rows from the left table, even if there is no match in the right table|`SELECT c.name, o.order_id FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id;`|
+|`RIGHT JOIN`|Return all rows from the right table, even if there is no match in the left table|`SELECT c.name, o.order_id FROM customers c RIGHT JOIN orders o ON c.customer_id = o.customer_id;`|
+|`FULL JOIN`|Return all rows when there is a match in either table; missing matches are filled with NULLs|`SELECT c.name, o.order_id FROM customers c FULL JOIN orders o ON c.customer_id = o.customer_id;`|
+|`LEFT ANTI JOIN`|Return rows from the left table that **do not** have a match in the right table|`SELECT c.* FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id WHERE o.customer_id IS NULL;`|
+|`RIGHT ANTI JOIN`|Return rows from the right table that **do not** have a match in the left table|`SELECT o.* FROM orders o RIGHT JOIN customers c ON c.customer_id = o.customer_id WHERE c.customer_id IS NULL;`|
+|`FULL ANTI JOIN`|Return rows from both tables that **do not** match each other|`SELECT * FROM customers c FULL JOIN orders o ON c.customer_id = o.customer_id WHERE c.customer_id IS NULL OR o.customer_id IS NULL;`|
+|`CROSS JOIN`|Return the Cartesian product of both tables (all combinations of rows)|`SELECT c.name, o.order_id FROM customers c CROSS JOIN orders o;`|
+
 **Other Commands**
 
 |Command|Description|Example|
 |:---|:---|:---|
-|`JOIN`|Combine data from multiple tables|`SELECT o.order_id, c.name FROM orders o JOIN customers c ON o.customer_id = c.customer_id;`|
-|`LEFT JOIN`|Return all rows from the left table, even if there is no match in the right table|`SELECT c.name, o.order_id FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id;`|
-|`RIGHT JOIN`|Return all rows from the right table, even if there is no match in the left table|`SELECT c.name, o.order_id FROM customers c RIGHT JOIN orders o ON c.customer_id = o.customer_id;`|
 |`UNION`|Combine the result sets of two or more `SELECT` statements|`SELECT name FROM customers UNION SELECT name FROM employees;`|
 |`INTERSECT`|Return the common rows from two or more `SELECT` statements|`SELECT name FROM customers INTERSECT SELECT name FROM employees;`|
 |`EXCEPT`|Return the rows from the first `SELECT` statement that are not present in the second `SELECT` statement|`SELECT name FROM customers EXCEPT SELECT name FROM employees;`|
