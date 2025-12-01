@@ -68,6 +68,20 @@
 |`ROLLBACK`|Rollback the changes made within a transaction.|`ROLLBACK;`|
 |`TRANSACTION`|Group multiple statements into a single unit of work|`BEGIN TRANSACTION; UPDATE accounts SET balance = balance - 100 WHERE id = 1; UPDATE accounts SET balance = balance + 100 WHERE id = 2; COMMIT;`|
 
+**String Functions**
+
+|Command|Description|Example|
+|:---|:---|:---|
+|`CONCAT`|Joins two or more strings together.|`SELECT CONCAT(first_name, ' ', last_name) AS full_name;`|
+|`UPPER`|Converts a string to uppercase.|`SELECT UPPER(name) FROM customers;`|
+|`LOWER`|Converts a string to lowercase.|`SELECT LOWER(email) FROM users;`|
+|`TRIM`|Removes leading and trailing spaces from a string.|`SELECT TRIM('   hello   ');`|
+|`REPLACE`|Replaces occurrences of a substring within a string.|`SELECT REPLACE('SQL Tutorial', 'Tutorial', 'Guide');`|
+|`LEN`|Returns the number of characters in a string.|`SELECT LEN(name) FROM products;`|
+|`LEFT`|Returns the leftmost characters from a string.|`SELECT LEFT('Database', 4); -- returns 'Data'`|
+|`RIGHT`|Returns the rightmost characters from a string.|`SELECT RIGHT('Database', 4); -- returns 'base'`|
+|`SUBSTRING`| Extracts part of a string starting at a position.|`SELECT SUBSTRING('Database', 5, 3); -- returns 'bas'`|
+
 **Aggregate Functions**
 
 |Command|Description|Example|
