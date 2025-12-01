@@ -82,7 +82,7 @@
 |`RIGHT`|Returns the rightmost characters from a string.|`SELECT RIGHT('Database', 4); -- returns 'base'`|
 |`SUBSTRING`| Extracts part of a string starting at a position.|`SELECT SUBSTRING('Database', 5, 3); -- returns 'bas'`|
 
-**Aggregate Functions**
+**Numeric Functions**
 
 |Command|Description|Example|
 |:---|:---|:---|
@@ -91,6 +91,8 @@
 |`AVG`|Calculate the average of a column|`SELECT AVG(age) FROM employees;`|
 |`MAX`|Find the maximum value in a column|`SELECT MAX(salary) FROM employees;`|
 |`MIN`|Find the minimum value in a column|`SELECT MIN(price) FROM products;`|
+|`ROUND`|Round a number to a specified number of decimals|`SELECT ROUND(price, 2) FROM products;`|
+|`ABS`|Return the absolute (positive) value of a number|`SELECT ABS(balance) FROM accounts;`|
 
 **SQL Joins**
 
