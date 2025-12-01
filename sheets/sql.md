@@ -91,18 +91,25 @@
 |`FULL ANTI JOIN`|Return rows from both tables that **do not** match each other|`SELECT * FROM customers c FULL JOIN orders o ON c.customer_id = o.customer_id WHERE c.customer_id IS NULL OR o.customer_id IS NULL;`|
 |`CROSS JOIN`|Return the Cartesian product of both tables (all combinations of rows)|`SELECT c.name, o.order_id FROM customers c CROSS JOIN orders o;`|
 
+**SET Operators**
+
+|Command|Description|Example|
+|:---|:---|:---|
+|`UNION`|Combine the result sets of two or more `SELECT` statements, **removing duplicates**|`SELECT name FROM customers UNION SELECT name FROM employees;`|
+|`UNION ALL`| Combine the result sets of two or more `SELECT` statements, **including duplicates**|`SELECT name FROM customers UNION ALL SELECT name FROM employees;`|
+|`INTERSECT`|Return the common rows from two or more `SELECT` statements|`SELECT name FROM customers INTERSECT SELECT name FROM employees;`|
+|`EXCEPT`|Return the rows from the first `SELECT` statement that are not present in the second `SELECT` statement|`SELECT name FROM customers EXCEPT SELECT name FROM employees;`|
+
 **Other Commands**
 
 |Command|Description|Example|
 |:---|:---|:---|
-|`UNION`|Combine the result sets of two or more `SELECT` statements|`SELECT name FROM customers UNION SELECT name FROM employees;`|
-|`INTERSECT`|Return the common rows from two or more `SELECT` statements|`SELECT name FROM customers INTERSECT SELECT name FROM employees;`|
-|`EXCEPT`|Return the rows from the first `SELECT` statement that are not present in the second `SELECT` statement|`SELECT name FROM customers EXCEPT SELECT name FROM employees;`|
 |`SUBQUERY`|A query nested inside another query|`SELECT * FROM products WHERE price > (SELECT AVG(price) FROM products);`|
 |`CASE`|Perform conditional logic|`SELECT name, CASE WHEN age >= 18 THEN 'Adult' ELSE 'Minor' END AS age_group FROM users;`|
 |---|Cartesian product is a cross-join which returns all the rows in all the tables listed in a query.|`SELECT c.id, c.nome, c.data_nascimento, c.telefone, p.cargo	FROM clientes AS c, profissoes AS p WHERE c.id_profissao = p.id;`|
 
 **Date functions**
+
 |Command|Description|Example|
 |:---|:---|:---|
 | `GETDATE()` | Returns the current date and time. | `SELECT GETDATE();` |
