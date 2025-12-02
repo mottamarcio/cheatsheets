@@ -155,7 +155,12 @@
 | `SEC_TO_TIME(seconds)` | Converts seconds to a time value. | `SELECT SEC_TO_TIME(3600);` |
 | `PERIOD_DIFF(period1, period2)` | Returns the number of months between periods. | `SELECT PERIOD_DIFF(202401, 202312);` |
 | `TIME_DIFF(time1, time2)` | Returns the difference between two time values. | `SELECT TIME_DIFF('10:30:00', '09:00:00');` |
-
+| `DATETRUNC` | Truncates a date to a specified precision         | `SELECT DATETRUNC(month, '2024-05-15');` |
+| `EOMONTH`   | Returns the last day of the month                 | `SELECT EOMONTH('2024-05-15');` |
+| `FORMAT`    | Formats a date value as a string                  | `SELECT FORMAT('2024-05-15', 'MMMM dd, yyyy');` |
+| `CONVERT`   | Converts a date to a specific style or data type  | `SELECT CONVERT(VARCHAR, '2024-05-15', 103);` |
+| `CAST`      | Casts a date expression to another data type      | `SELECT CAST('2024-05-15' AS DATETIME);` |
+| `ISDATE`    | Checks whether a value is a valid date            | `SELECT ISDATE('2024-05-15');` |
 
 **Tips and Tricks:**
 
