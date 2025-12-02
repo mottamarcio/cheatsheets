@@ -155,6 +155,7 @@
 | `SEC_TO_TIME(seconds)` | Converts seconds to a time value. | `SELECT SEC_TO_TIME(3600);` |
 | `PERIOD_DIFF(period1, period2)` | Returns the number of months between periods. | `SELECT PERIOD_DIFF(202401, 202312);` |
 | `TIME_DIFF(time1, time2)` | Returns the difference between two time values. | `SELECT TIME_DIFF('10:30:00', '09:00:00');` |
+| `DATENAME`  | Returns a specific part of a date as text         | `SELECT DATENAME(month, '2024-05-15');` |
 | `DATETRUNC` | Truncates a date to a specified precision         | `SELECT DATETRUNC(month, '2024-05-15');` |
 | `EOMONTH`   | Returns the last day of the month                 | `SELECT EOMONTH('2024-05-15');` |
 | `FORMAT`    | Formats a date value as a string                  | `SELECT FORMAT('2024-05-15', 'MMMM dd, yyyy');` |
