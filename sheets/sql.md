@@ -122,7 +122,9 @@
 |:---|:---|:---|
 |`SUBQUERY`|A query nested inside another query|`SELECT * FROM products WHERE price > (SELECT AVG(price) FROM products);`|
 |`CASE`|Perform conditional logic|`SELECT name, CASE WHEN age >= 18 THEN 'Adult' ELSE 'Minor' END AS age_group FROM users;`|
-|---|Cartesian product is a cross-join which returns all the rows in all the tables listed in a query.|`SELECT c.id, c.nome, c.data_nascimento, c.telefone, p.cargo	FROM clientes AS c, profissoes AS p WHERE c.id_profissao = p.id;`|
+|`COALESCE`|Returns the first non-NULL value from a list of expressions| `SELECT name, COALESCE(nickname, 'No nickname') AS display_name FROM users;`|
+|`ISNULL`|Replaces NULL with a specified value (SQL Server specific)|`SELECT price, ISNULL(discount, 0) AS final_discount FROM products;`|
+| |Cartesian product is a cross-join which returns all the rows in all the tables listed in a query.|`SELECT c.id, c.nome, c.data_nascimento, c.telefone, p.cargo	FROM clientes AS c, profissoes AS p WHERE c.id_profissao = p.id;`|
 
 **Date functions**
 
