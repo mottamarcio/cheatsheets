@@ -94,6 +94,26 @@
 |`ROUND`|Round a number to a specified number of decimals|`SELECT ROUND(price, 2) FROM products;`|
 |`ABS`|Return the absolute (positive) value of a number|`SELECT ABS(balance) FROM accounts;`|
 
+**Window Functions**
+
+| Function                      | Description                                                   | Example                                         |
+| :---------------------------- | :------------------------------------------------------------ | :---------------------------------------------- |
+| `COUNT(expr) OVER (...)`      | Returns the count of rows in the window frame.                | `COUNT(*) OVER (PARTITION BY department)`       |
+| `SUM(expr) OVER (...)`        | Calculates the sum over the window frame.                     | `SUM(salary) OVER (PARTITION BY department)`    |
+| `AVG(expr) OVER (...)`        | Calculates the average value over the window frame.           | `AVG(score) OVER (ORDER BY exam_date)`          |
+| `MIN(expr) OVER (...)`        | Returns the minimum value in the window frame.                | `MIN(price) OVER (PARTITION BY category)`       |
+| `MAX(expr) OVER (...)`        | Returns the maximum value in the window frame.                | `MAX(age) OVER (ORDER BY age)`                  |
+| `ROW_NUMBER()`                | Assigns a unique sequential number to each row in the window. | `ROW_NUMBER() OVER (ORDER BY created_at)`       |
+| `RANK()`                      | Assigns a rank with gaps for ties.                            | `RANK() OVER (ORDER BY score DESC)`             |
+| `DENSE_RANK()`                | Assigns a rank without gaps for ties.                         | `DENSE_RANK() OVER (ORDER BY revenue DESC)`     |
+| `CUME_DIST()`                 | Calculates cumulative distribution (0–1).                     | `CUME_DIST() OVER (ORDER BY salary)`            |
+| `PERCENT_RANK()`              | Returns the relative rank (0–1).                              | `PERCENT_RANK() OVER (ORDER BY score)`          |
+| `NTILE(n)`                    | Divides rows into *n* buckets and assigns a bucket number.    | `NTILE(4) OVER (ORDER BY sales)`                |
+| `LEAD(expr, offset, default)` | Returns a future value from the next row(s).                  | `LEAD(salary, 1) OVER (ORDER BY hired_date)`    |
+| `LAG(expr, offset, default)`  | Returns a previous value from prior row(s).                   | `LAG(price, 1) OVER (ORDER BY date)`            |
+| `FIRST_VALUE(expr)`           | Returns the first value in the window frame.                  | `FIRST_VALUE(score) OVER (ORDER BY score DESC)` |
+| `LAST_VALUE(expr)`            | Returns the last value in the window frame.                   | `LAST_VALUE(score) OVER (ORDER BY score DESC)`  |
+
 **SQL Joins**
 
 |Command|Description|Example|
