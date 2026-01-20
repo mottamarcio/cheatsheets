@@ -1,13 +1,13 @@
-# PLANNING POKER
+## PLANNING POKER
 
-## 1-2 points (Simple):
+### 1-2 points (Simple):
 * The task is **well known** by the team, they've done something similar before
 * Has **few or no technical doubts**
 * Involves **few files/components** of the system
 * **Low risk** of blockers or dependencies
 * Example: Fix a text, adjust CSS, create a simple CRUD endpoint
 
-## 3-5 points (Moderate):
+### 3-5 points (Moderate):
 * The task has **some uncertainty** or novelty
 * Involves **multiple components** or integrations
 * May have **dependencies** on other areas/people
@@ -15,7 +15,7 @@
 * **Moderate risk** of unforeseen complexity
 * Example: Implement a new feature with validations, integrate with external API, refactor medium-sized module
 
-## 8 points (High/Complex):
+### 8 points (High/Complex):
 * The task has **high technical or requirements uncertainty**
 * Involves **multiple systems/modules** with complex integrations
 * Requires **research/proof of concept** before final implementation
